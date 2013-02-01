@@ -9571,6 +9571,11 @@ bool Unit::isVisibleForInState(Player const* u, bool inVisibleList) const
     return isVisibleForOrDetect(u, false, inVisibleList, false);
 }
 
+bool Unit::isFarSight(Player const* u, bool inVisibleList) const
+{
+    return false;
+}
+
 uint32 Unit::GetCreatureType() const
 {
     if (GetTypeId() == TYPEID_PLAYER)

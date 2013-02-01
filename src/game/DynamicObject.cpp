@@ -177,3 +177,8 @@ bool DynamicObject::isVisibleForInState(Player const* u, bool inVisibleList) con
         && (IsWithinDistInMap(u->m_seer, World::GetMaxVisibleDistanceForObject() + (inVisibleList ? World::GetVisibleObjectGreyDistance() : 0.0f), false));
 }
 
+bool DynamicObject::isFarSight(Player const* u, bool inVisibleList) const
+{
+    return IsInWorld() && u->IsInWorld(); //Zkontrolovat mozna chybejici podminky
+}
+

@@ -707,6 +707,8 @@ class WorldObject : public Object, public WorldLocation
         // low level function for visibility change code, must be define in all main world object subclasses
         virtual bool isVisibleForInState(Player const* u, bool inVisibleList) const = 0;
 
+		virtual bool isFarSight(Player const* u, bool inVisibleList) const = 0;
+
         // Low Level Packets
         void SendPlaySound(uint32 Sound, bool OnlySelf);
 

@@ -772,6 +772,11 @@ bool GameObject::isVisibleForInState(Player const* u, bool inVisibleList) const
         (inVisibleList ? World::GetVisibleObjectGreyDistance() : 0.0f), false);
 }
 
+bool GameObject::isFarSight(Player const* u, bool inVisibleList) const
+{
+	return false;
+}
+
 bool GameObject::canDetectTrap(Player const* u, float distance) const
 {
     if (u->hasUnitState(UNIT_STAT_STUNNED))

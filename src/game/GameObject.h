@@ -642,6 +642,7 @@ class GameObject : public WorldObject, public GridObject<GameObject>
         void TriggeringLinkedGameObject(uint32 trapEntry, Unit* target);
 
         bool isVisibleForInState(Player const* u, bool inVisibleList) const;
+		bool isFarSight(Player const* u, bool inVisibleList) const;
         bool canDetectTrap(Player const* u, float distance) const;
 
         GameObject* LookupFishingHoleAround(float range);

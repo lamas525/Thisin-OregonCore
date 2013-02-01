@@ -18953,6 +18953,15 @@ void Player::UpdateVisibilityOf(WorldObject* target)
             if (target->isType(TYPEMASK_UNIT))
                 SendInitialVisiblePackets((Unit*)target);
         }
+		else if (target->isFarSight(this,false))
+		{
+			target->SendUpdateToPlayer(this);
+			
+			#ifdef OREGON_DEBUG
+            if ((sLog.getLogFilter() & LOG_FILTER_VISIBILITY_CHANGES) == 0)
+                sLog.outDebug("Far Sight %u (Type: %u) is visible now for player %u. Distance = %f",target->GetGUIDLow(),target->GetTypeId(),GetGUIDLow(),GetDistance(target));
+            #endif
+		}
     }
 }
 
